@@ -44,6 +44,7 @@ export class UsuarioAdminRoutedComponent implements OnInit {
     this.oUsuarioService.getPage(this.page, this.size).subscribe({
       next: (arrUsuario: IPage<IUsuario>) => {
         this.arrUsuarios = arrUsuario.content;
+        this.page = 0;
         this.arrBotonera = this.oBotoneraService.getBotonera(this.page, arrUsuario.totalPages);
         this.totalPages = arrUsuario.totalPages;
       },
