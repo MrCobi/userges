@@ -44,4 +44,12 @@ eliminarUsuario(id: number): Observable<any> {
   return this.oHttp.delete<any>('http://localhost:8085/usuario/' + id);
 }
 
+actualizarUsuario(oUsuario: IUsuario): Observable<IUsuario> {
+  console.log(oUsuario);
+  return this.oHttp.put<IUsuario>(
+    'http://localhost:8085/usuario/',
+    oUsuario
+  );
+}
+
 }
